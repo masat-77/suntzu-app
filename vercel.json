@@ -1,0 +1,46 @@
+# 孫子の兵法 — 対話式学習アプリ
+
+孫子の兵法を全13篇、AIと対話しながらスキマ時間で学べるWebアプリです。
+
+## デプロイ手順
+
+### 1. GitHubにプッシュ
+
+```bash
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/あなたのユーザー名/リポジトリ名.git
+git push -u origin main
+```
+
+### 2. Vercelでデプロイ
+
+1. [vercel.com](https://vercel.com) にアクセスしてGitHubアカウントでログイン
+2. 「Add New Project」→ このリポジトリを選択
+3. 「Environment Variables」に以下を追加：
+   - Name: `ANTHROPIC_API_KEY`
+   - Value: AnthropicのAPIキー（https://console.anthropic.com で取得）
+4. 「Deploy」をクリック
+
+### 3. 完了
+
+数分でURLが発行されます。そのURLにアクセスするとアプリが動作します。
+
+## ファイル構成
+
+```
+/
+├── index.html       # アプリ本体（フロントエンド）
+├── api/
+│   └── chat.js      # サーバーレス関数（APIキーを安全に管理）
+├── vercel.json      # Vercel設定
+└── README.md
+```
+
+## 技術スタック
+
+- フロントエンド: HTML / CSS / Vanilla JS
+- バックエンド: Vercel Serverless Functions
+- AI: Anthropic Claude API (claude-sonnet-4-6)
