@@ -1,6 +1,1 @@
-{
-      "routes": [
-              { "src": "/api/chat", "dest": "/api/chat" },
-              { "src": "/((?!api/).*)", "dest": "/index.html" }
-      ]
-}
+{ "outputDirectory": "." }
